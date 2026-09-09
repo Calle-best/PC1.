@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aroma Andino | Cafetería</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FUNCIONALIDAD 8: Barra de notificaciones aleatorias -->
+  <div id="barra-notificacion" class="barra-notificacion">
+    Bienvenido a Aroma Andino ☕
+  </div>
+
+  <header class="hero" id="inicio">
+    <nav class="navbar">
+      <a class="logo" href="#inicio">☕ Aroma Andino</a>
+      <div class="menu">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#productos">Productos</a>
+        <a href="#pedido">Pedido</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="hero-contenido">
+      <p class="etiqueta">CAFÉ · TRADICIÓN · SABOR</p>
+      <h1>El sabor de los Andes en cada taza</h1>
+      <p>
+        Café peruano, bebidas calientes y acompañamientos preparados
+        para disfrutar en el local o pedir para llevar.
+      </p>
+      <a class="boton-principal" href="#pedido">Haz tu pedido</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="nosotros" class="seccion">
+      <div class="titulo-seccion">
+        <span>01</span>
+        <div>
+          <p class="mini-titulo">NUESTRA ESENCIA</p>
+          <h2>Sobre Aroma Andino</h2>
+        </div>
+      </div>
+      <p class="texto-central">
+        Aroma Andino es una cafetería inspirada en los sabores peruanos.
+        Ofrecemos café, infusiones y productos de acompañamiento en un
+        ambiente cálido y cercano.
+      </p>
+    </section>
+
+    <section id="productos" class="seccion fondo-suave">
+      <div class="titulo-seccion">
+        <span>02</span>
+        <div>
+          <p class="mini-titulo">NUESTROS FAVORITOS</p>
+          <h2>Productos</h2>
+        </div>
+      </div>
+
+      <!-- FUNCIONALIDAD 9: Visualización interactiva de productos -->
+      <div class="filtros-productos">
+        <button onclick="mostrarCategoria('todos')">Todos</button>
+        <button onclick="mostrarCategoria('cafe')">Cafés</button>
+        <button onclick="mostrarCategoria('infusion')">Infusiones</button>
+        <button onclick="mostrarCategoria('acompanamiento')">Acompañamientos</button>
+      </div>
+
+      <div class="grid-productos">
+        <article class="producto cafe">
+          <div class="producto-icono">☕</div>
+          <h3>Café Andino</h3>
+          <p>Café peruano de aroma intenso.</p>
+          <strong>S/ 8.00</strong>
+        </article>
+
+        <article class="producto cafe">
+          <div class="producto-icono">🥛</div>
+          <h3>Capuccino Andino</h3>
+          <p>Espresso, leche cremosa y canela.</p>
+          <strong>S/ 10.00</strong>
+        </article>
+
+        <article class="producto infusion">
+          <div class="producto-icono">🌿</div>
+          <h3>Mate de Muña</h3>
+          <p>Infusión tradicional, aromática y reconfortante.</p>
+          <strong>S/ 6.00</strong>
+        </article>
+
+        <article class="producto infusion">
+          <div class="producto-icono">🍵</div>
+          <h3>Infusión Andina</h3>
+          <p>Mezcla de hierbas aromáticas seleccionadas.</p>
+          <strong>S/ 7.00</strong>
+        </article>
+
+        <article class="producto acompanamiento">
+          <div class="producto-icono">🥪</div>
+          <h3>Sándwich de Pollo</h3>
+          <p>Pan artesanal con pollo y vegetales.</p>
+          <strong>S/ 12.00</strong>
+        </article>
+
+        <article class="producto acompanamiento">
+          <div class="producto-icono">🍰</div>
+          <h3>Queque de Quinua</h3>
+          <p>Porción suave con un toque casero.</p>
+          <strong>S/ 8.00</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="pedido" class="seccion">
+      <div class="titulo-seccion">
+        <span>03</span>
+        <div>
+          <p class="mini-titulo">PERSONALIZA TU EXPERIENCIA</p>
+          <h2>Realiza tu pedido</h2>
+        </div>
+      </div>
+
+      <div class="pedido-contenedor">
+        <div class="pedido-info">
+          <h3>¿Qué deseas ordenar?</h3>
+          <p>
+            Completa tus datos. JavaScript validará la información y
+            mostrará un mensaje personalizado.
+          </p>
+
+          <ul>
+            <li>✓ Selecciona tu producto</li>
+            <li>✓ Elige el tamaño</li>
+            <li>✓ Indica cómo deseas recibirlo</li>
+            <li>✓ Recibe una confirmación inmediata</li>
+          </ul>
+        </div>
+
+        <!-- FUNCIONALIDADES 1,2,3,4,5,6,7,10 -->
+        <form id="formulario-pedido" onsubmit="return false;">
+          <label for="nombre">Nombre del cliente</label>
+          <input
+            type="text"
+            id="nombre"
+            placeholder="Ejemplo: Valeria"
+          >
+
+          <label for="producto">Producto</label>
+          <select id="producto">
+            <option value="">Selecciona un producto</option>
+            <option value="Café Andino">Café Andino</option>
+            <option value="Capuccino Andino">Capuccino Andino</option>
+            <option value="Mate de Muña">Mate de Muña</option>
+            <option value="Infusión Andina">Infusión Andina</option>
+            <option value="Sándwich de Pollo">Sándwich de Pollo</option>
+            <option value="Queque de Quinua">Queque de Quinua</option>
+          </select>
+
+          <label for="tamano">Tamaño</label>
+          <select id="tamano">
+            <option value="">Selecciona un tamaño</option>
+            <option value="pequeño">Pequeño</option>
+            <option value="mediano">Mediano</option>
+            <option value="grande">Grande</option>
+          </select>
+
+          <label for="atencion">Tipo de atención</label>
+          <select id="atencion" onchange="mostrarCampoDireccion()">
+            <option value="">Selecciona una opción</option>
+            <option value="local">Atención en local</option>
+            <option value="recojo">Recojo en tienda</option>
+            <option value="delivery">Delivery</option>
+          </select>
+
+          <div id="grupo-direccion" class="oculto">
+            <label for="direccion">Dirección de entrega</label>
+            <input
+              type="text"
+              id="direccion"
+              placeholder="Ingresa tu dirección"
+            >
+          </div>
+
+          <div class="botones-formulario">
+            <!-- REQUISITO: evento onclick -->
+            <button
+              type="button"
+              class="boton-principal"
+              onclick="procesarPedido()"
+            >
+              Procesar pedido
+            </button>
+
+            <button
+              type="button"
+              class="boton-secundario"
+              onclick="limpiarFormulario()"
+            >
+              Limpiar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion contacto">
+      <div class="titulo-seccion">
+        <span>04</span>
+        <div>
+          <p class="mini-titulo">HABLEMOS</p>
+          <h2>Contacto</h2>
+        </div>
+      </div>
+
+      <div class="contacto-grid">
+        <div>
+          <h3>Teléfono</h3>
+          <p>📞 999 999 999</p>
+        </div>
+        <div>
+          <h3>Horario</h3>
+          <p>🕒 Lunes a sábado · 8:00 a.m. – 9:00 p.m.</p>
+        </div>
+        <div>
+          <h3>Redes sociales</h3>
+          <div class="redes">
+            <a href="#" aria-label="Facebook">ⓕ Facebook</a>
+            <a href="#" aria-label="Instagram">◎ Instagram</a>
+            <a href="#" aria-label="TikTok">♪ TikTok</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Aroma Andino · Proyecto PC1 JavaScript Avanzado</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
